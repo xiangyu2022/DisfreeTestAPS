@@ -6,27 +6,14 @@ Codes for the paper: A Novel Method for Distribution-free Testing in SGWB Angula
 
 ## Download the Datasets
 
-Download the datasets at: https://github.com/xiangyu2022/Symbiotic-Star-RT-Cru-Analysis/tree/main/datasets
+Download the datasets at:
 
-## Download R and Necessary Packages
-
-First, install R and load the LPBkg and LPsmooth package in R as:
-
-install.packages("LPBkg")
-
-install.packages("LPsmooth")
-
-library("LPBkg")
-
-library("LPsmooth")
 
 ## Implementation of the codes 
 
-Download the codes at: https://github.com/xiangyu2022/Symbiotic-Star-RT-Cru-Analysis/tree/main/codes 
-
 It may take a long time to run the simulation part, so we provide our simulation results above for your reference. 
 
-Download the simulation results at: https://drive.google.com/file/d/1-FqaEsOhGxrDjwMGi-DEtBrjYnDF_MWr/view?usp=sharing
+Download the simulation results at:
 
 For more technical problems, please contact the author of the paper Xiangyu Zhang at zhan6004@umn.edu.
 
