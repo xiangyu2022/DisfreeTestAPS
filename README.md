@@ -15,7 +15,7 @@ It may take a long time to run the simulation part, so we provide our simulation
 
 Download the simulation results at:
 
-For more technical problems, please contact the author of the paper Xiangyu Zhang at zhan6004@umn.edu.
+For more technical problems, please contact Xiangyu Zhang at zhan6004@umn.edu.
 
 
 ## References
