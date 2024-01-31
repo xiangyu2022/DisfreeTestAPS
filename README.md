@@ -4,11 +4,6 @@ Codes for the paper: A Novel Method for Distribution-free Testing in SGWB Angula
 
 # Getting Started
 
-## Download the Datasets
-
-Download the datasets at:
-
-
 ## Implementation of the codes 
 
 It may take a long time to run the simulation part, so we provide our simulation results above for your reference. 
