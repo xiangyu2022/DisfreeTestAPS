@@ -5,9 +5,11 @@ Codes for the paper: A Novel Method for Distribution-free Testing in SGWB Angula
 # Getting Started
 
 ## Codes 
-The codes can be found here [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/PRL_Codes).
+
 
 ## Implementation of the codes 
+
+The codes can be found [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL).
 
 It may take a long time to run the simulation part, so we provide our simulation results above for your reference. 
 
