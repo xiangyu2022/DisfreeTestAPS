@@ -1,14 +1,15 @@
-y1 <- read.csv("KS_res_y1_L04_df6_100.csv", header = FALSE)$V1
-y2 <- read.csv("KS_res_y2_L04_df6_100.csv", header = FALSE)$V1
-y3 <- read.csv("KS_res_y3_L04_df6_100.csv", header = FALSE)$V1
-y4 <- read.csv("KS_res_y4_L04_df6_100.csv", header = FALSE)$V1
-y5 <- read.csv("KS_N500_L04_boot_asym.csv", header = FALSE)$V1
+y1 <- read.csv("KS_res_y1_L15_df6_100.csv", header = FALSE)$V1
+y2 <- read.csv("KS_res_y2_L15_df6_100.csv", header = FALSE)$V1
+y3 <- read.csv("KS_res_y3_L15_df6_100.csv", header = FALSE)$V1
+y4 <- read.csv("KS_res_y4_L15_df6_100.csv", header = FALSE)$V1
+y5 <- read.csv("KS_N500_L15_boot_asym.csv", header = FALSE)$V1
 
-y1_rot <- read.csv("KS_rotated_y1_L04_df6_100.csv", header = FALSE)$V1
-y2_rot <- read.csv("KS_rotated_y2_L04_df6_100.csv", header = FALSE)$V1
-y3_rot <- read.csv("KS_rotated_y3_L04_df6_100.csv", header = FALSE)$V1
-y4_rot <- read.csv("KS_rotated_y4_L04_df6_100.csv", header = FALSE)$V1
+y1_rot <- read.csv("KS_rotated_y1_L15_df6_100.csv", header = FALSE)$V1
+y2_rot <- read.csv("KS_rotated_y2_L15_df6_100.csv", header = FALSE)$V1
+y3_rot <- read.csv("KS_rotated_y3_L15_df6_100.csv", header = FALSE)$V1
+y4_rot <- read.csv("KS_rotated_y4_L15_df6_100.csv", header = FALSE)$V1
 
+# https://personal.sron.nl/~pault/#sec:qualitative
 cols <- c(
   # rgb(51, 187, 238, maxColorValue = 255),#cyan
   rgb(102, 153, 204, maxColorValue = 255),#light blue
@@ -26,7 +27,7 @@ legend_lables <- c(expression(N(C^M1, Sigma)),
                    expression(N(C^M2, Sigma)),
                    expression(T[6](C^M1, Sigma)),
                    expression(T[6](C^M2, Sigma)),
-                   "Asymptotics")
+                   "asymptotic distribution")
 
 make_plot <- function(y_list, col = cols, lty = ltys, lwd = lwds, cex = 1,
                       ordering = 1:length(y_list), xlab = "c",
@@ -47,20 +48,21 @@ make_plot <- function(y_list, col = cols, lty = ltys, lwd = lwds, cex = 1,
   if(length(y_list) == 5) lines(x[[5]], y[[5]], type = "l", col = col[5],
                                 lty = lty[5], lwd = lwds[5])
   legend("bottomright", legend = legend_lables, col = cols, lty = ltys,
-         lwd = lwds, seg.len = 4, cex = cex)
+         lwd = lwds, seg.len = 4, cex = 1.5)
 }
 setEPS()
-postscript("PRL_sphere.eps",width = 9, height = 6)
+postscript("PRL_sphere_L15.eps",width = 9, height = 6)
 par(mar = c(4, 5, 2, 2))
 make_plot(list(y1, y2, y3, y4), ordering = c(1,3,2,4), cex = 2, xlim = c(0.8, 7))
 dev.off()
 
 setEPS()
-postscript("PRL_rotate.eps",width = 9, height = 6)
+postscript("PRL_rotate_L15.eps",width = 9, height = 6)
 par(mar = c(4, 5, 2, 2))
 make_plot(list(y1_rot, y2_rot, y3_rot, y4_rot, y5), ordering = c(1,3,2,4,5), cex = 2)
 dev.off()
 
-
+par(mar = c(4, 5, 2, 2))
+make_plot(list(KS_df6_N810, KS1_df6_N810, KS_resboot_df6_N810), ordering = c(1,2,3), cex = 2)
 
 
