@@ -1,11 +1,11 @@
 # Distribution-free test for stochastic gravitational wave (SGWB) models. 
 
 Codes and tutorials for our companion two papers: 
-- **{Algeri, S. et al. (2024+)}**
+- **Algeri, S. et al. (2024+)**
   *A Distribution-Free Approach to Testing Models for Angular Power Spectra*  
   submitted to *Physical Review Letters*.
 
-- **{Zhang, X. et al. (2024+)}**
+- **Zhang, X. et al. (2024+)**
   *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   submitted to *Physical Review D*.
 
@@ -26,10 +26,10 @@ For more technical problems, please contact Xiangyu Zhang at zhan6004@umn.edu.
 
 
 ## References
-- **{Algeri, S. et al. (2024+)}**
+- **Algeri, S. et al. (2024+)**
   *A Distribution-Free Approach to Testing Models for Angular Power Spectra*  
   submitted to *Physical Review Letters*.
 
-- **{Zhang, X. et al. (2024+)}**
+- **Zhang, X. et al. (2024+)**
   *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   submitted to *Physical Review D*.
