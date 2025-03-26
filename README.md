@@ -1,6 +1,6 @@
 # Distribution-free test for stochastic gravitational wave (SGWB) models. 
 
-Codes for the paper: A Novel Method for Distribution-free Testing in SGWB Angular Power Spectrum Model.
+Codes and Tutorial for the paper: On Validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions.
 
 # Getting Started
 
