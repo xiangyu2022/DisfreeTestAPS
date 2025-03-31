@@ -1,4 +1,4 @@
-# Distribution-free test for stochastic gravitational wave (SGWB) models. 
+# Distribution-free goodness-of-fit test for angular power spectrum Models. 
 
 Codes and tutorials for our companion two papers: 
 - **Algeri, S. et al. (2024+)**
