@@ -9,12 +9,14 @@ This repository contains code, simulation results, and tutorials demonstrating h
   *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   submitted to *Physical Review D*.
 
-### Code and simulation results
-There are two repositories about how we generate the 
+## Code and simulation results 
+There are two repositories that detail the simulations and figures produced for the two previously discussed papers. 
 
 
+It may take a long time to run the simulation part, so we provide our simulation results [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Simulation) for your reference. 
 
-### Tutorials on performing distribution-free tests for your models
+
+## Tutorials on performing distribution-free tests for your models
 Here, suppose you are given a set of data and a postulated model for it, and 
 
 
@@ -23,7 +25,6 @@ Here, suppose you are given a set of data and a postulated model for it, and
 
 The codes for generating the simulations can be found [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_Simulation.py). 
 
-It may take a long time to run the simulation part, so we provide our simulation results [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Simulation) for your reference. 
 
 These simulation results can be used to directly generate the plots in our paper through [the R file](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_plots.R).
 
