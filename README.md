@@ -1,4 +1,4 @@
-## Distribution-free goodness-of-fit test for angular power spectrum models 
+# Distribution-free goodness-of-fit test for angular power spectrum models 
 
 Codes and tutorials for our companion two papers: 
 - **Algeri, S. et al. (2024+)**
