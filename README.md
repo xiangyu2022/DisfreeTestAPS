@@ -14,7 +14,8 @@ There are two folders that detail the simulations and figures produced for the t
 
 
 
-The codes for generating the simulations plots takes a relatively long time to run for simulation, so we provide our simulation results [here for PRL paper]([https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/Codes_PRL/PRL_Simulation_Result](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result)) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
+The codes for generating the simulations plots takes a relatively long time to run for simulation, so we provide our simulation results 
+[here for PRL paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
 
 
 ## Tutorials on performing distribution-free tests for your models
