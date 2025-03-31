@@ -10,7 +10,8 @@ This repository contains code, simulation results, and tutorials demonstrating h
   submitted to *Physical Review D*.
 
 ## Code and simulation results 
-There are two repositories that detail the simulations and figures produced for the two previously discussed papers. 
+There are two folders that detail the simulations and figures produced for the two previously discussed papers. 
+
 
 
 It may take a long time to run the simulation part, so we provide our simulation results [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Simulation) for your reference. 
