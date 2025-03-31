@@ -17,10 +17,8 @@ There are two folders that detail the simulations and figures produced for the t
 For example, let \(\mathbf{C}^{M_1}(\boldsymbol{\theta})\) and \(\mathbf{C}^{M_2}(\boldsymbol{\theta})\) be two candidate models for \( E[\widehat{\mathbf{C}}] \) with components
 
 $$
-\begin{aligned}
 C^{M_1}_{\ell}(x_i,\boldsymbol{\theta}) &= \theta_0 + \theta_1 \ell + \theta_2 x_i,\\
 C^{M_2}_{\ell}(x_i,\boldsymbol{\theta}) &= \exp\{\theta_0 + \theta_1 x_i + \theta_2 x_i \ell\}.
-\end{aligned}
 $$
 
 The \(x_i\) values considered correspond to \(n=100\) evenly spaced points on the interval \([0,1]\), and \(\ell = 1, \dots, 5\). The true value of the parameter \(\boldsymbol{\theta} = (\theta_0, \theta_1, \theta_2)\) is \((5, 2, 4)\). In the numerical experiments conducted, \(\boldsymbol{\theta}\) is treated as unknown and is estimated as in [\[optim\]](#optim). 
