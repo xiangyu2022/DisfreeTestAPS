@@ -14,7 +14,7 @@ There are two folders that detail the simulations and figures produced for the t
 
 # README
 
-For example, let \(\mathbf{C}^{M_1}(\boldsymbol{\theta})\) and \(\mathbf{C}^{M_2}(\boldsymbol{\theta})\) be two candidate models for \( E[\widehat{\mathbf{C}}] \) with components
+For example, let $\mathbf{C}^{M_1}(\boldsymbol{\theta})$ and $\mathbf{C}^{M_2}(\boldsymbol{\theta})$ be two candidate models for $ E[\widehat{\mathbf{C}}] $ with components
 
 $$
 C^{M_1}_{\ell}(x_i,\boldsymbol{\theta}) &= \theta_0 + \theta_1 \ell + \theta_2 x_i,\\
