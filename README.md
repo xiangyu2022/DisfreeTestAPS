@@ -9,9 +9,14 @@ This repository contains code, simulation results, and tutorials demonstrating h
   *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   submitted to *Physical Review D*.
 
-# Tutorials
+### Code and simulation results
+There are two repositories about how we generate the 
 
-## Codes 
+
+
+### Tutorials on performing distribution-free tests for your models
+Here, suppose you are given a set of data and a postulated model for it, and 
+
 
 
 ## Implementation of the codes 
