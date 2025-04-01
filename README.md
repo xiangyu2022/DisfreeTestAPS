@@ -23,12 +23,11 @@ The codes for generating the simulations plots takes a relatively long time to r
 Here we provide a step-by-step tutorial on how we apply the distribution-free goodness-of-fit tests to your own model. You need to have your data, denoted as $y$, its variance-covariance matrix, denoted as $Sigma$, and the postulated model that is of interest. 
 As the first step, we obtain the solve the estimators by minimizing the generalized least squares. This can be achieved by 
 
-<pre>```
-def optim_func(pars):
+<pre>def optim_func(pars):
     diff = np.matrix(y - postulated_function(pars))
     return diff @ Sig_inv @ diff.T
 res = minimize(optim_func, np.repeat(0,len(par)), method='nelder-mead')
-```</pre>
+</pre>
 
 
 Here, you need to prepare for your own suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
