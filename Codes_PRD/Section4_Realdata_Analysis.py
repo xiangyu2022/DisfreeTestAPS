@@ -15,24 +15,13 @@ from autograd import jacobian
 from scipy.stats import multivariate_normal
 from scipy.stats import multivariate_t
 
-np.random.seed(1234)
-N = 960
-rep = 15
-
-
-# The covariance matrix is assumed to be known, call it Sig, here is how we get its inverse and square root matrix. 
-x = np.array([30,50,70,90,110,130,150,170])
-X, L = np.tile(np.repeat(x,8),rep),  np.tile(np.arange(1,9),len(x)*rep)
-n, LL,p = len(x), 8, 3
-n_ind = n*rep
-
-
-
 y = np.loadtxt("/Users/zxysmacbook/Downloads/v7/A_hat_v7.txt")
 post_func = np.loadtxt("/Users/zxysmacbook/Downloads/v7/A_theta_hat_3_parameters_v7.txt")
 Sig = np.loadtxt("/Users/zxysmacbook/Downloads/v7/Sigma_v7.txt")
 Jacob = np.loadtxt("/Users/zxysmacbook/Downloads/v7/jacobian_3_parameters_v7.txt")
 Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig))
+
+N = 960
 
 residuals = Sig_inv_sqrt @ (y - post_func)
 M_theta =  Sig_inv_sqrt @ Jacob
