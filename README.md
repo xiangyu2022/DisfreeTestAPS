@@ -54,7 +54,7 @@ M_theta = M_theta_func(res.x)
 R_n = M_theta.T @ M_theta
 R_n_invsq = sqrtm(np.linalg.inv(R_n))
 mu_theta = M_theta @ R_n_invsq 
-
+</pre>
 
 <pre>  
 # Creating the r_1 and r_2， can be generalized to r_p.
