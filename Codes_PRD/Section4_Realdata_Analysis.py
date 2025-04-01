@@ -8,12 +8,7 @@ Created on Mon Aug 12 10:27:04 2024
 
 
 import numpy as np 
-from scipy.optimize import minimize
-from scipy.linalg import sqrtm,block_diag
-import matplotlib.pyplot as plt
-from autograd import jacobian
-from scipy.stats import multivariate_normal
-from scipy.stats import multivariate_t
+from scipy.linalg import sqrtm
 
 y = np.loadtxt("/Users/zxysmacbook/Downloads/v7/A_hat_v7.txt")
 post_func = np.loadtxt("/Users/zxysmacbook/Downloads/v7/A_theta_hat_3_parameters_v7.txt")
@@ -21,7 +16,9 @@ Sig = np.loadtxt("/Users/zxysmacbook/Downloads/v7/Sigma_v7.txt")
 Jacob = np.loadtxt("/Users/zxysmacbook/Downloads/v7/jacobian_3_parameters_v7.txt")
 Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig))
 
-N = 960
+
+np.random.seed(1234)
+N, n_ind = 960, 120
 
 residuals = Sig_inv_sqrt @ (y - post_func)
 M_theta =  Sig_inv_sqrt @ Jacob
