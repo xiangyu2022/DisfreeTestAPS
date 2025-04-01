@@ -31,9 +31,10 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 ** Step 1: Estimate parameters via Generalized Least Squares (GLS) **
 Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
 
-<pre> import numpy as np 
+<pre>import numpy as np 
 from scipy.optimize import minimize
 from scipy.linalg import sqrtm
+
 Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig_inv))
 def optim_func(pars):
     diff = np.matrix(y - postulated_function(pars))
