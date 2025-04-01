@@ -28,7 +28,7 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - The postulated model of interest, denoted $postulated_function$.
 
-** Step 1: Estimate parameters via Generalized Least Squares (GLS) **
+**Step 1: Estimate parameters via Generalized Least Squares (GLS)**
 Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
 
 <pre>import numpy as np 
