@@ -10,29 +10,9 @@ This repository contains code, simulation results, and tutorials demonstrating h
   submitted to *Physical Review D*.
 
 ## Code and simulation results 
-There are two folders that detail the simulations and figures produced for the two previously discussed papers. The *codes_PRL* contains the codes for the simulation described in Section III. In this case, we consider the data are generaterd through 
+There are two folders that detail the simulations and figures produced for the above two papers. For both of the cases, we consider the data are generated through the model 
+$\hat{A}$ 
 
-For example, let $ \mathbf{C}^{M_1}(\boldsymbol{\theta}) $ and $ \mathbf{C}^{M_2}(\boldsymbol{\theta}) $ be two candidate models for $ E[\widehat{\mathbf{C}}] $ with components:
-
-$$
-\begin{aligned}
-C^{M_1}_{\ell}(x_i,\boldsymbol{\theta}) &= \theta_0 + \theta_1 \ell + \theta_2 x_i,\\
-C^{M_2}_{\ell}(x_i,\boldsymbol{\theta}) &= \exp\{\theta_0 + \theta_1 x_i + \theta_2 x_i \ell\}.
-\end{aligned}
-$$
-
-The $x_i$ values considered correspond to **$n = 100$** evenly spaced points on the interval **$[0,1]$**, and $\ell = 1, \dots, 5$. The **true value** of the parameter $\boldsymbol{\theta} = (\theta_0, \theta_1, \theta_2)$ is **$(5, 2, 4)$**. In the numerical experiments conducted, $\boldsymbol{\theta}$ is treated as unknown and is estimated as in [\[optim\]](#optim). 
-
-For each of the two models in [\[eqn:models\]](#eqnmodels), we consider two possible **distributions** for the corresponding estimator of the power spectrum:
-
-$$
-\begin{aligned}
-\widehat{\mathbf{C}}_{1,k}(x_i) &\sim \mathcal{N}\Bigl(\mathbf{C}^{M_k}(x_i,\boldsymbol{\theta}), \mathbf{\Sigma}(x_i)\Bigr),\\
-\widehat{\mathbf{C}}_{2,k}(x_i) &\sim T_6\Bigl(\mathbf{C}^{M_k}(x_i,\boldsymbol{\theta}), \mathbf{\Sigma}(x_i)\Bigr).
-\end{aligned}
-$$
-
-That is, for each $x_i$, $\widehat{\mathbf{C}}_{1,k}(x_i)$ and $\widehat{\mathbf{C}}_{2,k}(x_i)$ are **independent random vectors** following, respectively, a **multivariate normal** and a **multivariate $t$-distribution** with six degrees of freedom. The mean vectors, $\mathbf{C}^{M_k}(x_i,\boldsymbol{\theta})$, have components $C^{M_k}_{\ell}(x_i,\boldsymbol{\theta})$ as defined above for $k = 1, 2$. The covariance matrices $\mathbf{\Sigma}(x_i)$ are generated from a **Wishart distribution** with 10 degrees of freedom.
 
 
 
