@@ -34,11 +34,11 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 from scipy.optimize import minimize
 from scipy.linalg import sqrtm
 
-Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig_inv))
+Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig))
 def optim_func(pars):
     diff = np.matrix(y - postfunc(pars))
     return diff @ Sig_inv @ diff.T
-res = minimize(optim_func, np.repeat(0,len(par)), method='nelder-mead')
+res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
 
