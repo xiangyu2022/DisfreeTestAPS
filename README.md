@@ -36,10 +36,10 @@ These simulation results can be used to directly generate the plots in our paper
 For technical inquiries, please reach out to Xiangyu Zhang at zhan6004@umn.edu.
 
 ## References
-- [1] **Algeri, S. et al. (2025+).**
+[1] **Algeri, S. et al. (2025+).**
   *A Distribution-Free Approach to Testing Models for Angular Power Spectra*  
   submitted to *Physical Review Letters*.
 
-- [2] **Zhang, X. et al. (2025+).**
+[2] **Zhang, X. et al. (2025+).**
   *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   submitted to *Physical Review D*.
