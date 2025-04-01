@@ -54,8 +54,9 @@ M_theta = M_theta_func(res.x)
 R_n = M_theta.T @ M_theta
 R_n_invsq = sqrtm(np.linalg.inv(R_n))
 mu_theta = M_theta @ R_n_invsq 
-<pre>
 
+
+<pre>  
 # Creating the r_1 and r_2， can be generalized to r_p.
 r2_tilde = r2 - np.inner(mu_theta[:,0]-r1, r2)/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
 U1r3 = r3 - np.inner(mu_theta[:,0]-r1, r3)/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
@@ -65,8 +66,7 @@ r3_tilde = U1r3 - np.inner(mu_theta[:,1]-r2_tilde, U1r3)/(1-np.inner(mu_theta[:,
 U_mu3_r3_res = residuals - np.inner(mu_theta[:,2]-r3_tilde, residuals)/(1-np.inner(mu_theta[:,2],r3_tilde))*(mu_theta[:,2]-r3_tilde)
 U_mu2_r2_res = U_mu3_r3_res - np.inner(mu_theta[:,1]-r2_tilde, U_mu3_r3_res)/(1-np.inner(mu_theta[:,1],r2_tilde))*(mu_theta[:,1]-r2_tilde)
 ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
-
-
+</pre>
 
 Here, you need to prepare for your own suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
 
