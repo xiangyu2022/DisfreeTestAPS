@@ -20,7 +20,16 @@ The codes for generating the simulations plots takes a relatively long time to r
 
 ## Tutorials on performing distribution-free tests for your models using the provided codes
 
-Here we provide a step-by-step tutorial on how we apply the distribution-free goodness-of-fit tests to your own model. You need to have your data, denoted as $y$, its variance-covariance matrix, denoted as $Sigma$, and the postulated model that is of interest. 
+Here is a step-by-step tutorial on applying distribution-free goodness-of-fit tests to your own model. You will need: 
+
+- Your data, denoted $y$; 
+
+- The variance-covariance matrix of your data, denoted $Sigma$; 
+
+- The postulated model of interest, denoted \textit{postulated_function}.
+
+
+Here we provide a step-by-step tutorial on how we apply the distribution-free goodness-of-fit tests to your own model. You need to have your data, denoted as $y$, its variance-covariance matrix, denoted as $Sigma$, and the postulated model that is of interest, denoted as $postulated_function$. 
 As the first step, we obtain the solve the estimators by minimizing the generalized least squares. This can be achieved by 
 
 <pre>def optim_func(pars):
