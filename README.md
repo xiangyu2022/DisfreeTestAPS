@@ -26,7 +26,7 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - The variance-covariance matrix of your data, denoted $Sig$; 
 
-- The postulated model of interest, denoted $postulated\_function$.
+- The postulated function of interest, denoted $postfunc$.
 
 **Step 1: Estimate parameters via Generalized Least Squares (GLS)**
 Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
@@ -37,7 +37,7 @@ from scipy.linalg import sqrtm
 
 Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig_inv))
 def optim_func(pars):
-    diff = np.matrix(y - postulated_function(pars))
+    diff = np.matrix(y - postfunc(pars))
     return diff @ Sig_inv @ diff.T
 res = minimize(optim_func, np.repeat(0,len(par)), method='nelder-mead')
 </pre>
