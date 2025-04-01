@@ -20,10 +20,10 @@ The codes for generating the simulations plots takes a relatively long time to r
 
 ## Tutorials on performing distribution-free tests for your models using the provided codes
 
-You can implement this distribution-free test following a very similar idea to what we did here for the real data analysis in Section 4 of [2]. Their codes can be found [here](https://github.com/xiangyu2022/DisfreeTestAPS/blob/main/Codes_PRD/Section4_Realdata_Analysis.py)
+You can implement this distribution-free test following a very similar idea to what we did here for the real data analysis in Section 4 of [2]. Their codes can be found [here](https://github.com/xiangyu2022/DisfreeTestAPS/blob/main/Codes_PRD/Section4_Realdata_Analysis.py). 
 
-Here, suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
 
+Here, you need to prepare for your own suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
 
 
 ## Implementation of the codes 
