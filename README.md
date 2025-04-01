@@ -28,8 +28,7 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - The postulated function of interest, denoted $postfunc$.
 
-**Step 1: Estimate parameters via Generalized Least Squares (GLS)**
-Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
+**Step 1: Estimate parameters via Generalized Least Squares (GLS).** Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
 
 <pre>import numpy as np 
 from scipy.optimize import minimize
