@@ -24,15 +24,18 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - Your data, denoted $y$; 
 
-- The variance-covariance matrix of your data, denoted $Sigma$; 
+- The variance-covariance matrix of your data, denoted $Sig$; 
 
-- The postulated model of interest, denoted \textit{postulated_function}.
+- The postulated model of interest, denoted $postulated_function$.
 
+** Step 1: Estimate parameters via Generalized Least Squares (GLS) **
+Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
 
-Here we provide a step-by-step tutorial on how we apply the distribution-free goodness-of-fit tests to your own model. You need to have your data, denoted as $y$, its variance-covariance matrix, denoted as $Sigma$, and the postulated model that is of interest, denoted as $postulated_function$. 
-As the first step, we obtain the solve the estimators by minimizing the generalized least squares. This can be achieved by 
-
-<pre>def optim_func(pars):
+<pre> import numpy as np 
+from scipy.optimize import minimize
+from scipy.linalg import sqrtm
+Sig_inv_sqrt = np.linalg.inv(sqrtm(Sig_inv))
+def optim_func(pars):
     diff = np.matrix(y - postulated_function(pars))
     return diff @ Sig_inv @ diff.T
 res = minimize(optim_func, np.repeat(0,len(par)), method='nelder-mead')
