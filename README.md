@@ -14,19 +14,13 @@ There are two folders that detail the simulations and figures produced for the a
 
 $$\hat{A}$$
 
-
-
-
-
-
-
-
 The codes for generating the simulations plots takes a relatively long time to run for simulation, so we provide our simulation results 
 [here for PRL paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
 
 
-## Tutorials on performing distribution-free tests for your models
-Here, suppose you are given a set of data and a postulated model for it, and 
+## Tutorials on performing distribution-free tests for your models using the provided codes 
+Here, suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
+
 
 
 ## Implementation of the codes 
