@@ -11,7 +11,9 @@ This repository contains code, simulation results, and tutorials demonstrating h
 
 ## Code and simulation results 
 There are two folders that detail the simulations and figures produced for the above two papers. For both of the cases, we consider the data are generated through the model 
-$\hat{A}$ 
+
+$$\hat{A}$$
+
 
 
 
