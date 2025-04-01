@@ -27,7 +27,7 @@ As the first step, we obtain the solve the estimators by minimizing the generali
 def optim_func(pars):
     diff = np.matrix(y - postulated_function(pars))
     return diff @ Sig_inv @ diff.T
-res = minimize(optim_func, np.repeat(0,len(par)), method='nelder-mead', options={'xatol': 1e-6, 'disp': True, 'maxiter':200})
+res = minimize(optim_func, np.repeat(0,len(par)), method='nelder-mead')
 ``` </pre>
 
 
