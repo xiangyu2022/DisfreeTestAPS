@@ -69,11 +69,13 @@ ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_t
 </pre>
 
 **Step 4: Obtain the test statistics using the K2-transformed residuals.** In this case, we consider the counterparts of the Kolmogorov-Smirnov statistic and the Cramér-von Mises statistic in the context of regression. 
+<pre>
 ks = max(abs(np.cumsum(1/np.sqrt(N)*ehat_sum)))
 cvm = sum((np.cumsum(1/np.sqrt(N)*ehat_sum))**2)
-
+</pre>
 
 **Step 5: Simulate the limiting null distribution of the test statistics and compute the p-value.** 
+<pre>
 B = 100000
 KS = []
 CVM = []
@@ -85,7 +87,7 @@ for b in range(B):
     CVM.append(sum((np.cumsum(1/np.sqrt(N)*(ehat_lim_sum)))**2))
 
 pval_KS, pval_CVM = (sum(KS>=ks)+1)/(B+1), (sum(CVM>=cvm)+1)/(B+1)
-
+</pre>
 
 
 ## Implementation of the codes 
