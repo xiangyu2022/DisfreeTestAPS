@@ -42,19 +42,20 @@ def optim_func(pars):
 res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
-**Step 2: Obtain the residuals and the standardized gradient $\mu_{\theta}$. ** 
 
-<pre>  
-residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
- #Sig_inv_sqrt @ np.vstack((np.repeat(1,N),X)).T
-def M_theta_func(theta):
-    theta = np.array(theta)
-    return Sig_inv_sqrt @ jacobian(postulated_function)(theta)
-M_theta = M_theta_func(res.x)
+**Step 2: Construct an orthonormal set of vectors $\{r_j\}_{j=1}^p$ in R^N** 
+
+
+
+**Step 2: Obtain the residuals and the transformed residuals. ** 
+
+<pre>residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
+M_theta = Sig_inv_sqrt @ jacobian(postulated_function)(res.x) 
 R_n = M_theta.T @ M_theta
 R_n_invsq = sqrtm(np.linalg.inv(R_n))
 mu_theta = M_theta @ R_n_invsq 
 </pre>
+
 
 <pre>  
 # Creating the r_1 and r_2， can be generalized to r_p.
