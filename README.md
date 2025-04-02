@@ -18,7 +18,7 @@ The codes for generating the simulations plots takes a relatively long time to r
 [here for PRL paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
 
 
-## Tutorials on performing distribution-free tests for your models using the provided codes
+## Tutorials on performing distribution-free tests for your models
 
 Here is a step-by-step tutorial on applying distribution-free goodness-of-fit tests to your own model. You will need: 
 
