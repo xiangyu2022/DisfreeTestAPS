@@ -22,7 +22,7 @@ The codes for generating the simulations plots takes a relatively long time to r
 
 Here is a step-by-step tutorial on applying distribution-free goodness-of-fit tests to your own model. You will need: 
 
-- Your data, denoted $y$ (of length N); 
+- Your data, denoted $y$, of length N; 
 
 - The variance-covariance matrix of your data, denoted $Sig$; 
 
