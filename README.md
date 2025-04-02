@@ -51,8 +51,8 @@ r3 = r3/np.linalg.norm(r3)
 </pre>
 
 **Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, also see Section III.2 of [2].
-<pre>residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
-M_theta = Sig_inv_sqrt @ jacobian(postulated_function)(res.x) 
+<pre>residuals = Sig_inv_sqrt @ (y - postfunc(res.x))
+M_theta = Sig_inv_sqrt @ jacobian(postfunc)(res.x) 
 R_n = M_theta.T @ M_theta
 R_n_invsq = sqrtm(np.linalg.inv(R_n))
 mu_theta = M_theta @ R_n_invsq 
