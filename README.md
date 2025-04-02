@@ -26,7 +26,7 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - The variance-covariance matrix of your data, denoted $Sig$; 
 
-- The postulated function of interest, denoted $postfunc$.
+- The postulated function of interest, denoted $postfunc$, with p unknown parameters.
 
 **Step 1: Estimate parameters via minimizing Generalized Least Squares (GLS).** 
 <pre>import numpy as np 
@@ -42,7 +42,7 @@ res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
 
-**Step 2: Construct $p$ orthonormal vectors (in this case, p=3), each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
+**Step 2: Construct p orthonormal vectors (in this case, p=3), each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
 <pre>r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
