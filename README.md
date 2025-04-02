@@ -43,7 +43,8 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 - The postulated function of interest, denoted $postfunc$, with p unknown parameters.
 
 **Step 1: Estimate parameters via minimizing Generalized Least Squares (GLS).** 
-<pre>import numpy as np 
+```python
+import numpy as np 
 from scipy.optimize import minimize
 from scipy.linalg import sqrtm
 from autograd import jacobian
@@ -53,7 +54,7 @@ def optim_func(pars):
     diff = np.matrix(y - postfunc(pars))
     return diff @ Sig_inv @ diff.T
 res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
-</pre>
+```
 
 
 **Step 2: Construct p orthonormal vectors (below is an example with p=3), each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
