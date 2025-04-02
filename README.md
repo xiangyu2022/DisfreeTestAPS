@@ -42,7 +42,7 @@ def optim_func(pars):
 res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
-**Step 2: Obtain the residuals and the residuals, M_theta and R_n.** 
+**Step 2: Obtain the residuals and the standardized gradient $\mu_{\theta}$. ** 
 
 <pre>  
 residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
