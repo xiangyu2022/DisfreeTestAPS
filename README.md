@@ -42,18 +42,20 @@ res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
 
-**Step 2: Construct p orthonormal vectors (below is an example for p=3), each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
+**Step 2: Construct p orthonormal vectors, each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
 <pre>r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
 r3 = r2**2 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2
 r3 = r3/np.linalg.norm(r3)
-# r4 = r2**3 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2 - np.inner(r3,r3**2)*r3
+# r4 = r2**3 - np.inner(r1,r2**3)*r1 - np.inner(r2,r2**3)*r2 - np.inner(r3,r2**3)*r3
 # r4 = r4/np.linalg.norm(r4)
+# r5 = r2**4 - np.inner(r1,r2**4)*r1 - np.inner(r2,r2**4)*r2 - np.inner(r3,r2**4)*r3 - np.inner(r4,r2**4)*r4
+# r5 = r5/np.linalg.norm(r5)
 # ... 
 </pre>
 
-**Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, also see Section III.2 of [2].
+**Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, see Section III.2 of [2].
 <pre>residuals = Sig_inv_sqrt @ (y - postfunc(res.x))
 M_theta = Sig_inv_sqrt @ jacobian(postfunc)(res.x) 
 R_n = M_theta.T @ M_theta
