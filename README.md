@@ -58,7 +58,8 @@ res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 
 
 **Step 2: Construct p orthonormal vectors (below is an example with p=3), each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
-<pre>r1 = np.repeat(1/np.sqrt(N),N)
+```python
+r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
 r3 = r2**2 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2
@@ -68,10 +69,11 @@ r3 = r3/np.linalg.norm(r3)
 # r5 = r2**4 - np.inner(r1,r2**4)*r1 - np.inner(r2,r2**4)*r2 - np.inner(r3,r2**4)*r3 - np.inner(r4,r2**4)*r4
 # r5 = r5/np.linalg.norm(r5)
 # ... 
-</pre>
+```
 
 **Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, see Section III.2 of [2].
-<pre>residuals = Sig_inv_sqrt @ (y - postfunc(res.x))
+```python
+residuals = Sig_inv_sqrt @ (y - postfunc(res.x))
 M_theta = Sig_inv_sqrt @ jacobian(postfunc)(res.x) 
 R_n = M_theta.T @ M_theta
 R_n_invsq = sqrtm(np.linalg.inv(R_n))
@@ -86,16 +88,16 @@ r3_tilde = U1r3 - np.inner(mu_theta[:,1]-r2_tilde, U1r3)/(1-np.inner(mu_theta[:,
 U_mu3_r3_res = residuals - np.inner(mu_theta[:,2]-r3_tilde, residuals)/(1-np.inner(mu_theta[:,2],r3_tilde))*(mu_theta[:,2]-r3_tilde)
 U_mu2_r2_res = U_mu3_r3_res - np.inner(mu_theta[:,1]-r2_tilde, U_mu3_r3_res)/(1-np.inner(mu_theta[:,1],r2_tilde))*(mu_theta[:,1]-r2_tilde)
 ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
-</pre>
+```
 
 **Step 4: Obtain the test statistics using the K2-transformed residuals.** In this case, we consider the counterparts of the Kolmogorov-Smirnov statistic and the Cramér-von Mises statistic in the context of regression. 
-<pre>
+```python
 ks = max(abs(np.cumsum(1/np.sqrt(N)*ehat_sum)))
 cvm = sum((np.cumsum(1/np.sqrt(N)*ehat_sum))**2)
-</pre>
+```
 
 **Step 5: Simulate the limiting null distribution of the test statistics and compute the p-value.** 
-<pre>
+```python
 B = 100000
 KS = []
 CVM = []
@@ -107,7 +109,9 @@ for b in range(B):
     CVM.append(sum((np.cumsum(1/np.sqrt(N)*(ehat_lim_sum)))**2))
 
 pval_KS, pval_CVM = (sum(KS>=ks)+1)/(B+1), (sum(CVM>=cvm)+1)/(B+1)
-</pre>
+```
+
+
 
 
 ## References
