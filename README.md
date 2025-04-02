@@ -48,6 +48,9 @@ r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
 r3 = r2**2 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2
 r3 = r3/np.linalg.norm(r3)
+# r4 = r2**3 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2 - np.inner(r3,r3**2)*r3
+# r4 = r4/np.linalg.norm(r4)
+# ... 
 </pre>
 
 **Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, also see Section III.2 of [2].
