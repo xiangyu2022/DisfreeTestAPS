@@ -28,7 +28,8 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - The postulated function of interest, denoted $postfunc$.
 
-**Step 1: Estimate parameters via Generalized Least Squares (GLS).** Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
+**Step 1: Estimate parameters via Generalized Least Squares (GLS).** 
+Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
 
 <pre>import numpy as np 
 from scipy.optimize import minimize
@@ -43,7 +44,8 @@ res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
 
-**Step 2: Construct $p$ orthonormal vectors in R^N.** In our case, we have $p=3$. Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
+**Step 2: Construct $p$ orthonormal vectors in R^N.** In our case, we have $p=3$. 
+Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
 <pre>r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
