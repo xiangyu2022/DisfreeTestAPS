@@ -51,23 +51,21 @@ r3 = r2**2 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2
 r3 = r3/np.linalg.norm(r3)
 </pre>
 
-**Step 3: Obtain the residuals and the transformed residuals.** 
+**Step 3: Obtain the residuals and the K2-transformed residuals.** 
+For a detailed introduction to the k2 transformation, also see Section III.2 of [2].
 
 <pre>residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
 M_theta = Sig_inv_sqrt @ jacobian(postulated_function)(res.x) 
 R_n = M_theta.T @ M_theta
 R_n_invsq = sqrtm(np.linalg.inv(R_n))
 mu_theta = M_theta @ R_n_invsq 
-</pre>
 
-
-<pre>  
-# Creating the r_1 and r_2， can be generalized to r_p.
+# Creating the vectors of $r_j$ that is orthogonal to mu_theta. 
 r2_tilde = r2 - np.inner(mu_theta[:,0]-r1, r2)/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
 U1r3 = r3 - np.inner(mu_theta[:,0]-r1, r3)/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
 r3_tilde = U1r3 - np.inner(mu_theta[:,1]-r2_tilde, U1r3)/(1-np.inner(mu_theta[:,1],r2_tilde))*(mu_theta[:,1]-r2_tilde)
 
-# Obtain the transformation, ehat. Up here
+# Make the operators U_mu1_r1 U_mu2_r2_tilde U_mu3_r3_tilde implemented on the residuals 
 U_mu3_r3_res = residuals - np.inner(mu_theta[:,2]-r3_tilde, residuals)/(1-np.inner(mu_theta[:,2],r3_tilde))*(mu_theta[:,2]-r3_tilde)
 U_mu2_r2_res = U_mu3_r3_res - np.inner(mu_theta[:,1]-r2_tilde, U_mu3_r3_res)/(1-np.inner(mu_theta[:,1],r2_tilde))*(mu_theta[:,1]-r2_tilde)
 ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
