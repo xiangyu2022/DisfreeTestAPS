@@ -52,7 +52,7 @@ r3 = r3/np.linalg.norm(r3)
 </pre>
 
 **Step 3: Obtain the residuals and the K2-transformed residuals.** 
-For a detailed introduction to the k2 transformation, also see Section III.2 of [2].
+For a detailed introduction to the K2 transformation, also see Section III.2 of [2].
 
 <pre>residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
 M_theta = Sig_inv_sqrt @ jacobian(postulated_function)(res.x) 
