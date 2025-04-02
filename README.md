@@ -10,9 +10,14 @@ This repository contains code, simulation results, and tutorials demonstrating h
   submitted to *Physical Review D*.
 
 ## Code and simulation results 
-There are two folders that detail the simulations and figures produced for the above two papers. For both of the cases, we consider the data are generated through the model 
+Two folders detail the simulations and figures produced for the submitted PRL and PRD papers. Specifically, *codes_PRD* includes
+- The file *Section3_Simulation.py* shows the simulation studies considering four combinations of data-generating models shown in Section III.B.1 and Section III.C.1 shown in [2]; 
+- The file *PRD_Simulation_Result_for_Fig1-2* saves the simulation results above, and it has been used together with *Section3_Drawing_Fig1-2.R* to draw Figures 1-2 in [2];
+- The file *Section3_Power&TypeIerror.py* shows the statistical properties (specifically, the power and the type-I error) of the proposed distribution-free test, as described in Section III.C.2 in [2]; 
+- The file *Section4_Realdata_Analysis.py* with *v7* and *v8* shows the 
 
-$$\hat{A}$$
+The folder *codes_PRL* includes 
+
 
 The codes for generating the simulations plots takes a relatively long time to run for simulation, so we provide our simulation results 
 [here for PRL paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
