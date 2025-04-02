@@ -68,9 +68,24 @@ U_mu2_r2_res = U_mu3_r3_res - np.inner(mu_theta[:,1]-r2_tilde, U_mu3_r3_res)/(1-
 ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
 </pre>
 
+**Step 4: Obtain the test statistics using the K2-transformed residuals.** In this case, we consider the counterparts of the Kolmogorov-Smirnov statistic and the Cramér-von Mises statistic in the context of regression. 
+ks = max(abs(np.cumsum(1/np.sqrt(N)*ehat_sum)))
+cvm = sum((np.cumsum(1/np.sqrt(N)*ehat_sum))**2)
 
 
-Here, you need to prepare for your own suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
+**Step 5: Simulate the limiting null distribution of the test statistics and compute the p-value.** 
+B = 100000
+KS = []
+CVM = []
+for b in range(B):
+    e = np.random.normal(0, scale=1, size=N)
+    ehat_lim = e - np.inner(r1,e)*r1 -  np.inner(r2,e)*r2 -  np.inner(r3,e)*r3
+    ehat_lim_sum =  ehat_lim.reshape(n_ind,-1).sum(axis=1)
+    KS.append(max(abs(np.cumsum(1/np.sqrt(N)*(ehat_lim_sum)))))
+    CVM.append(sum((np.cumsum(1/np.sqrt(N)*(ehat_lim_sum)))**2))
+
+pval_KS, pval_CVM = (sum(KS>=ks)+1)/(B+1), (sum(CVM>=cvm)+1)/(B+1)
+
 
 
 ## Implementation of the codes 
