@@ -28,9 +28,7 @@ Here is a step-by-step tutorial on applying distribution-free goodness-of-fit te
 
 - The postulated function of interest, denoted $postfunc$.
 
-**Step 1: Estimate parameters via Generalized Least Squares (GLS).** 
-Obtain the parameter estimates by minimizing the generalized least squares objective. This can be done by:
-
+**Step 1: Estimate parameters via minimizing Generalized Least Squares (GLS).** 
 <pre>import numpy as np 
 from scipy.optimize import minimize
 from scipy.linalg import sqrtm
@@ -44,8 +42,7 @@ res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 </pre>
 
 
-**Step 2: Construct $p$ orthonormal vectors in R^N.** In our case, we have $p=3$. 
-Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
+**Step 2: Construct $p$ orthonormal vectors in R^N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
 <pre>r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
@@ -53,9 +50,7 @@ r3 = r2**2 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2
 r3 = r3/np.linalg.norm(r3)
 </pre>
 
-**Step 3: Obtain the residuals and the K2-transformed residuals.** 
-For a detailed introduction to the K2 transformation, also see Section III.2 of [2].
-
+**Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, also see Section III.2 of [2].
 <pre>residuals = Sig_inv_sqrt @ (y - postulated_function(res.x))
 M_theta = Sig_inv_sqrt @ jacobian(postulated_function)(res.x) 
 R_n = M_theta.T @ M_theta
@@ -72,6 +67,8 @@ U_mu3_r3_res = residuals - np.inner(mu_theta[:,2]-r3_tilde, residuals)/(1-np.inn
 U_mu2_r2_res = U_mu3_r3_res - np.inner(mu_theta[:,1]-r2_tilde, U_mu3_r3_res)/(1-np.inner(mu_theta[:,1],r2_tilde))*(mu_theta[:,1]-r2_tilde)
 ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
 </pre>
+
+
 
 Here, you need to prepare for your own suppose you are given a set of data, its variance-covariance matrix, and the models of interest for testing. Now, the first task to do is to estimate the unknown parameters of the model of interest. This part corresponds to solving 
 
