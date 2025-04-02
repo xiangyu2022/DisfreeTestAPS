@@ -44,11 +44,12 @@ res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 
 
 **Step 2: Construct $p$ orthonormal vectors in R^N.** In our case, we have $p=3$. Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
-r1 = np.repeat(1/np.sqrt(N),N)
+<pre>r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
 r2 = r2/np.linalg.norm(r2)
 r3 = r2**2 - np.inner(r1,r2**2)*r1 - np.inner(r2,r2**2)*r2
 r3 = r3/np.linalg.norm(r3)
+</pre>
 
 **Step 3: Obtain the residuals and the transformed residuals.** 
 
