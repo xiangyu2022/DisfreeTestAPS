@@ -17,6 +17,15 @@ $$\hat{A}$$
 The codes for generating the simulations plots takes a relatively long time to run for simulation, so we provide our simulation results 
 [here for PRL paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
 
+## Implementation of the codes 
+
+The codes for generating the simulations can be found [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_Simulation.py). 
+
+
+These simulation results can be used to directly generate the plots in our paper through [the R file](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_plots.R).
+
+For technical inquiries, please reach out to Xiangyu Zhang at zhan6004@umn.edu.
+
 
 ## Tutorials on performing distribution-free tests for your models
 
@@ -94,15 +103,6 @@ for b in range(B):
 pval_KS, pval_CVM = (sum(KS>=ks)+1)/(B+1), (sum(CVM>=cvm)+1)/(B+1)
 </pre>
 
-
-## Implementation of the codes 
-
-The codes for generating the simulations can be found [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_Simulation.py). 
-
-
-These simulation results can be used to directly generate the plots in our paper through [the R file](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_plots.R).
-
-For technical inquiries, please reach out to Xiangyu Zhang at zhan6004@umn.edu.
 
 ## References
 [1] **Algeri, S. et al. (2025+).**
