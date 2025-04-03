@@ -42,9 +42,9 @@ Two folders—`codes_PRD` and `codes_PRL`—contain the code for simulation and 
 
 Below is a step-by-step tutorial demonstrating how to apply distribution-free goodness-of-fit tests to your own model. You will need:
 
-- Your data, denoted \( y \), of length \( N \)
-- The variance-covariance matrix of your data, denoted \( \Sigma \)
-- A postulated function of interest, denoted \( \textit{postfunc} \), with \( p \) unknown parameters
+- Your data, denoted y, of length N
+- The variance-covariance matrix of your data, denoted Sigma
+- A postulated function of interest, denoted \(postfunc\), with p unknown parameters. 
 
 ---
 
