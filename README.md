@@ -38,8 +38,6 @@ Two folders—`codes_PRD` and `codes_PRL`—contain the code for simulation and 
 
 ---
 
-For technical inquiries, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
-
 ## Tutorials on Performing Distribution-Free Tests for Your Models
 
 Below is a step-by-step tutorial demonstrating how to apply distribution-free goodness-of-fit tests to your own model. You will need:
@@ -122,6 +120,9 @@ for b in range(B):
 
 pval_KS, pval_CVM = (sum(KS>=ks)+1)/(B+1), (sum(CVM>=cvm)+1)/(B+1)
 ```
+
+For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
+
 
 ## References
 [1] **Algeri, S. et al. (2025+).**
