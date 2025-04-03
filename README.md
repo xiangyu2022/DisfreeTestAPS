@@ -10,7 +10,7 @@ This repository contains code, simulation results, and tutorials demonstrating h
   submitted to *Physical Review D*.
 
 
-## Implementation of Code and Simulation Results
+## Code and Simulation Results
 
 Two folders—`codes_PRD` and `codes_PRL`—contain the code for simulation and figure-generation scripts for the submitted PRD and PRL papers, respectively.
 
