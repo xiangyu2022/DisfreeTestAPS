@@ -40,34 +40,18 @@ Two folders—`codes_PRD` and `codes_PRL`—contain the simulation code and figu
 
 For technical inquiries, please contact **Xiangyu Zhang** at [zhan6004@umn.edu](mailto:zhan6004@umn.edu).
 
+## Tutorials on Performing Distribution-Free Tests for Your Models
 
-## Implementation of code and simulation results 
+Below is a step-by-step tutorial demonstrating how to apply distribution-free goodness-of-fit tests to your own model. You will need:
 
-Two folders, code_PRD and code_PRL, contain the code for the simulations and figures produced for the submitted PRD and PRL papers, respectively.
+- Your data, denoted \( y \), of length \( N \)
+- The variance-covariance matrix of your data, denoted \( \Sigma \)
+- A postulated function of interest, denoted \( \textit{postfunc} \), with \( p \) unknown parameters
 
-Folder \texttt{code_PRD} includes 
-- The file *Section3_Simulation.py* shows the simulation studies considering four combinations of data-generating models shown in Section III.B.1 and Section III.C.1 shown in [2]; 
-- The folder *PRD_Simulation_Result_for_Fig1-2* saves the simulation results above (as it takes a relatively long time to run), and it has been used together with *Section3_Drawing_Fig1-2.R* to draw Figures 1-2 in [2];
-- The file *Section3_Power&TypeIerror.py* shows the statistical properties (specifically, the power and the type-I error) of the proposed distribution-free test, as described in Section III.C.2 in [2]; 
-- The file *Section4_Realdata_Analysis.py* with *v7* and *v8* shows the real data analysis as described in Section IV in [2];
+---
 
-The folder *codes_PRL* includes 
-- The file *PRL_Simulation.py* shows the simulation studies considering four combinations of data-generating models shown in Section III of [1];
-- The folder *PRL_Simulation_Result* saves the simulation results above, and it has been used together with *PRL_plots.R* to draw Figure 1 in Section 3 of [1].
+### Step 1: Estimate Parameters via Generalized Least Squares (GLS)
 
-For any technical inquiries, please reach out to Xiangyu Zhang at zhan6004@umn.edu.
-
-## Tutorials on performing distribution-free tests for your models
-
-Here is a step-by-step tutorial on applying distribution-free goodness-of-fit tests to your own model. You will need: 
-
-- Your data, denoted $y$, of length N; 
-
-- The variance-covariance matrix of your data, denoted $Sig$; 
-
-- The postulated function of interest, denoted $postfunc$, with p unknown parameters.
-
-**Step 1: Estimate parameters via minimizing Generalized Least Squares (GLS).** 
 ```python
 import numpy as np 
 from scipy.optimize import minimize
@@ -81,8 +65,8 @@ def optim_func(pars):
 res = minimize(optim_func, np.repeat(0,len(pars)), method='nelder-mead')
 ```
 
-
-**Step 2: Construct p orthonormal vectors (below is an example with p=3), each of length N.** Notice that the code here is just one way to construct such vectors; for more details, please refer to Section III.2 of [2].
+### Step 2: Construct p Orthonormal Vectors
+Below is an example for p=3, each vector of length N. Note that this code is just one example of how to construct such vectors. For more details, see Section III.2 of [2].
 ```python
 r1 = np.repeat(1/np.sqrt(N),N)
 r2 = [np.sqrt(12/N)*(n/N-(N+1)/(2*N)) for n in (range(1,N+1))]
@@ -96,7 +80,9 @@ r3 = r3/np.linalg.norm(r3)
 # ... 
 ```
 
-**Step 3: Obtain the residuals and the K2-transformed residuals.** For a detailed introduction to the K2 transformation, see Section III.2 of [2].
+### Step 3: Obtain Residuals and K2-Transformed Residuals
+For a detailed introduction to the K2 transformation, see Section III.2 of [2].
+
 ```python
 residuals = Sig_inv_sqrt @ (y - postfunc(res.x))
 M_theta = Sig_inv_sqrt @ jacobian(postfunc)(res.x) 
@@ -115,13 +101,14 @@ U_mu2_r2_res = U_mu3_r3_res - np.inner(mu_theta[:,1]-r2_tilde, U_mu3_r3_res)/(1-
 ehat = U_mu2_r2_res - np.inner(mu_theta[:,0]-r1, U_mu2_r2_res )/(1-np.inner(mu_theta[:,0],r1))*(mu_theta[:,0]-r1)
 ```
 
-**Step 4: Obtain the test statistics using the K2-transformed residuals.** In this case, we consider the counterparts of the Kolmogorov-Smirnov statistic and the Cramér-von Mises statistic in the context of regression. 
+### Step 4: Compute Test Statistics
+Here, we consider the Kolmogorov–Smirnov and Cramér–von Mises statistics in the context of regression. 
 ```python
 ks = max(abs(np.cumsum(1/np.sqrt(N)*ehat_sum)))
 cvm = sum((np.cumsum(1/np.sqrt(N)*ehat_sum))**2)
 ```
+### Step 5: Simulate the Limiting Null Distribution and Compute p-Values
 
-**Step 5: Simulate the limiting null distribution of the test statistics and compute the p-value.** 
 ```python
 B = 100000
 KS = []
