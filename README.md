@@ -9,28 +9,24 @@ This repository contains code, simulation results, and tutorials demonstrating h
   *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   submitted to *Physical Review D*.
 
-## Code and simulation results 
-Two folders detail the simulations and figures produced for the submitted PRL and PRD papers. Specifically, *codes_PRD* includes
-- The file *Section3_Simulation.py* shows the simulation studies considering four combinations of data-generating models shown in Section III.B.1 and Section III.C.1 shown in [2]; 
-- The file *PRD_Simulation_Result_for_Fig1-2* saves the simulation results above, and it has been used together with *Section3_Drawing_Fig1-2.R* to draw Figures 1-2 in [2];
-- The file *Section3_Power&TypeIerror.py* shows the statistical properties (specifically, the power and the type-I error) of the proposed distribution-free test, as described in Section III.C.2 in [2]; 
-- The file *Section4_Realdata_Analysis.py* with *v7* and *v8* shows the real data analysis as described in Section IV in [2];
+
+
+
+## Implementation of code and simulation results 
+
+Two folders, codes_PRD and codes_PRL, contain the simulations and how the figures produced for the submitted PRD and PRL papers, respectively.
+
+- Folder codes_PRD
+-- The file *Section3_Simulation.py* shows the simulation studies considering four combinations of data-generating models shown in Section III.B.1 and Section III.C.1 shown in [2]; 
+-- The folder *PRD_Simulation_Result_for_Fig1-2* saves the simulation results above (as it takes a relatively long time to run), and it has been used together with *Section3_Drawing_Fig1-2.R* to draw Figures 1-2 in [2];
+-- The file *Section3_Power&TypeIerror.py* shows the statistical properties (specifically, the power and the type-I error) of the proposed distribution-free test, as described in Section III.C.2 in [2]; 
+-- The file *Section4_Realdata_Analysis.py* with *v7* and *v8* shows the real data analysis as described in Section IV in [2];
 
 The folder *codes_PRL* includes 
+- The file *PRL_Simulation.py* shows the simulation studies considering four combinations of data-generating models shown in Section III of [1];
+- The folder *PRL_Simulation_Result* saves the simulation results above, and it has been used together with *PRL_plots.R* to draw Figure 1 in Section 3 of [1].
 
-
-The codes for generating the simulations plots takes a relatively long time to run for simulation, so we provide our simulation results 
-[here for PRL paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRL/PRL_Simulation_Result) and [here for PRD paper](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/tree/main/Codes_PRD/PRD_Simulation_Result_for_Fig1-2) for your reference. 
-
-## Implementation of the codes 
-
-The codes for generating the simulations can be found [here](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_Simulation.py). 
-
-
-These simulation results can be used to directly generate the plots in our paper through [the R file](https://github.com/xiangyu2022/Distfree_Test_SGWB_Models/blob/main/Codes_PRL/PRL_plots.R).
-
-For technical inquiries, please reach out to Xiangyu Zhang at zhan6004@umn.edu.
-
+For any technical inquiries, please reach out to Xiangyu Zhang at zhan6004@umn.edu.
 
 ## Tutorials on performing distribution-free tests for your models
 
@@ -110,9 +106,6 @@ for b in range(B):
 
 pval_KS, pval_CVM = (sum(KS>=ks)+1)/(B+1), (sum(CVM>=cvm)+1)/(B+1)
 ```
-
-
-
 
 ## References
 [1] **Algeri, S. et al. (2025+).**
