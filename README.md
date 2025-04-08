@@ -25,7 +25,7 @@ Two folders—`codes_PRD` and `codes_PRL`—contain the code for simulation and 
 - **`Section3_Power&TypeIerror.py`**  
   Evaluates the statistical properties (power and type-I error) of the proposed distribution-free test, as detailed in Section III.C.2 of [2].
 
-- **`Section4_Realdata_Analysis.py` (versions `v7` and `v8`)**  
+- **`Section4_Realdata_Analysis.py` **  
   Contains the real data analysis described in Section IV of [2].
 
 ### Folder: `codes_PRL`
