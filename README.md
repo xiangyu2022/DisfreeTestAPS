@@ -15,24 +15,24 @@ Two folders—`codes_PRD` and `codes_PRL`—contain the code for simulation and 
 ### Folder: `codes_PRD`
 
 - **`Section3_Simulation.py`**  
-  Implements simulation studies examining four combinations of data-generating models, as described in Sections III.B.1 and III.C.1 of [2].
+  Implements simulation studies examining four combinations of data-generating models, as described in Sections III.B.1 and III.C.1 of [1].
 
 - **`PRD_Simulation_Result_for_Fig1-2`**  
-  Stores the simulation results (which require substantial computation time). These results, together with `Section3_Drawing_Fig1-2.R`, were used to create Figures 1–2 in [2].
+  Stores the simulation results (which require substantial computation time). These results, together with `Section3_Drawing_Fig1-2.R`, were used to create Figures 1–2 in [1].
 
 - **`Section3_Power&TypeIerror.py`**  
-  Evaluates the statistical properties (power and type-I error) of the proposed distribution-free test, as detailed in Section III.C.2 of [2].
+  Evaluates the statistical properties (power and type-I error) of the proposed distribution-free test, as detailed in Section III.C.2 of [1].
 
 - **`Section4_Realdata_Analysis.py`**  
-  Contains the real data analysis described in Section IV of [2].
+  Contains the real data analysis described in Section IV of [1].
 
 ### Folder: `codes_PRL`
 
 - **`PRL_Simulation.py`**  
-  Implements simulation studies involving four combinations of data-generating models, as discussed in Section III of [1].
+  Implements simulation studies involving four combinations of data-generating models, as discussed in Section III of [2].
 
 - **`PRL_Simulation_Result`**  
-  Stores the simulation results. Together with `PRL_plots.R`, it was used to produce Figure 1 in Section 3 of [1].
+  Stores the simulation results. Together with `PRL_plots.R`, it was used to produce Figure 1 in Section 3 of [2].
 
 ---
 
