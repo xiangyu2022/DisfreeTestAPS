@@ -1,12 +1,12 @@
 # Distribution-free goodness-of-fit test for angular power spectrum models 
 
 This repository contains code, simulation results, and tutorials demonstrating how to apply distribution-free goodness-of-fit tests to angular power spectrum models, as described in the following companion articles.
-- **Algeri, S. et al. (2026).**
-  *A Distribution-Free Approach to Testing Models for Angular Power Spectra*  
-  *Physical Review Letters*.
+- **Algeri S., Zhang X., Floden E., Zhao H., Jones G., Mandic V., and Miller J. (2026).**
+  *Testing models for angular power spectra: a distribution-free approach*  
+  *Physical Review D*.
 
-- **Zhang, X. et al. (2026).**
-  *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
+- **Zhang X., Floden E., Zhao H.,  Algeri S., Jones G., Mandic V., and Miller J. (2026).**
+  *Validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
   *Physical Review D*.
 
 
