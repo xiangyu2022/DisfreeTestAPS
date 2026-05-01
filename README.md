@@ -123,10 +123,8 @@ For any technical inquiry, please contact **Xiangyu Zhang** at [zhan6004@umn.edu
 
 
 ## References
-[1] **Algeri, S. et al. (2025+).**
-  *A Distribution-Free Approach to Testing Models for Angular Power Spectra*  
-  submitted to *Physical Review Letters*.
+[1]  - **Zhang X., Floden E., Zhao H.,  Algeri S., Jones G., Mandic V., and Miller J. (2026).**
+  *Validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions. Physical Review D*.
 
-[2] **Zhang, X. et al. (2025+).**
-  *On validating Angular Power Spectral Models for the Stochastic Gravitational-Wave Background Without Distributional Assumptions*  
-  submitted to *Physical Review D*.
+[2] - **Algeri S., Zhang X., Floden E., Zhao H., Jones G., Mandic V., and Miller J. (2026).**
+  *Testing models for angular power spectra: a distribution-free approach. Physical Review D*.
